@@ -7,11 +7,11 @@ const app: Application = express()
 
 const portType = parseInt(process.env.PORT!)
 const port: number = portType
+MainApp(app)
 
-DB()
 
 const server = app.listen(process.env.port!||port, async()=>{
-    await MainApp(app)
+    await DB()
     console.log("Server is Active");
 })
 

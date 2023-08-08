@@ -20,9 +20,9 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const portType = parseInt(process.env.PORT);
 const port = portType;
-(0, DB_1.default)();
+(0, MainApp_1.default)(app);
 const server = app.listen(process.env.port || port, () => __awaiter(void 0, void 0, void 0, function* () {
-    yield (0, MainApp_1.default)(app);
+    yield (0, DB_1.default)();
     console.log("Server is Active");
 }));
 process.on("uncaughtException", (error) => {
