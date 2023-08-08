@@ -10,7 +10,7 @@ const port: number = portType
 
 DB()
 
-const server = app.listen(port, async()=>{
+const server = app.listen(process.env.port!||port, async()=>{
     await MainApp(app)
     console.log("Server is Active");
 })
